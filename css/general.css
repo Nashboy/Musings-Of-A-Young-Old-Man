@@ -79,6 +79,7 @@ header nav {
   padding: 0;
   margin: 0;
   float: left;
+  box-shadow: 1px 0px 10px 1px grey;
 }
 
 header nav > div.logo {
@@ -97,7 +98,7 @@ header nav > div.logo h1 {
   font-size: 16px;
   padding: 3px 0 1px 3px;
   margin: 0;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 header nav > div.logo a {
@@ -128,8 +129,8 @@ header nav div.menu ul {
   /* background: lime; */
   width: 100%;
   float: right;
-  padding: 0 0 0 10%;
-  margin: 8px 0 8px 0%;
+  padding: 0 auto 0 12%;
+  margin: 8px auto 8px auto;
   display: inline;
 }
 
@@ -139,7 +140,7 @@ header nav div.menu ul li {
   display: inline;
   font-size: 12px;
   padding: 0 2%;
-  margin: 2px 2px 2px 6px;
+  margin: 2px auto 2px auto;
   border-radius: 5px;
 }
 
