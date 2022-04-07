@@ -15,18 +15,20 @@
   <header>
     <nav>
       <div class="logo">
-        <h1><a href="index.html">Musings of A Young Old Man</a></h1>
+        <!-- <h1><a href="index.html">Musings of A Young Old Man</a></h1> -->
+				<h1><a href="/">Musings of A Young Old Man</a></h1>
         <h4>with Nigel H.</h4>
       </div>
-      <div class="menu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="topics.html">Topics</a></li>
-          <li><a href="thoughts.html">Blogs</a></li>
-          <li><a href="references.html">References</a></li>
-          <li><a href="#">About Me</a></li>
-        </ul>
-      </div>
+			<div class="menu">
+				<ul>
+	        <!-- <li><a href="index.html">Home</a></li> -->
+					<li><a href="/">Home</a></li>
+	        <li><a href="topics.html">Topics</a></li>
+	        <li><a href="thoughts.html">Blogs</a></li>
+	        <li><a href="references.html">References</a></li>
+	        <li><a href="#">About Me</a></li>
+	      </ul>
+			</div>
     </nav>
   </header>
   <body>
@@ -48,11 +50,13 @@
         </label>
       </div>
       <div class="optionBlock">
-        <button>publish</button>
-        <input type="file" accept="image/*" id="imageUpload" hidden>
-        <label for="imageUpload" class="">Upload Image</label>
+        <button class = "publish-btn">publish</button>
+        <input type="file" accept="image/*" id="image-upload" hidden>
+        <label for="image-upload" class="">Upload Image</label>
       </div>
       <!-- <a href="displayPost.html">test</a> -->
     </form>
+    <p id = "test">TEST</p>
+    <script type="text/javascript" src = "postBuild.js"></script>
   </body>
 </html>
