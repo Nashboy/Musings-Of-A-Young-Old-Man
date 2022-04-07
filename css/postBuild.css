@@ -1,0 +1,159 @@
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+body {
+  /* background: blue; */
+  height: 605px;
+}
+
+body form {
+  float: left;
+  width: 80%;
+  /* background: red; */
+  margin: 15px 10%;
+  padding: 5px;
+  font-family: sans-serif;
+}
+
+body form > div.titleBlock {
+  float: left;
+  width: 100%;
+  /* background: orange; */
+}
+
+body form > div.titleBlock input {
+  color: black;
+  width: 100%;
+  border: 0px;
+  border-bottom: 2px solid lightgrey;
+  padding: 15px 5%;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+body form > div.titleBlock input:focus {
+  outline: none;
+  border-bottom: 2px solid grey;
+}
+
+body form > div.articleBlock {
+  /* background: orange; */
+  float: left;
+  width: 100%;
+}
+
+body form > div.articleBlock textarea {
+  color: black;
+  width: 100%;
+  /* height: 300px; */
+  border: 0px;
+  border-left: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+  font-size: 14px;
+  padding: 10px 5%;
+  font-family: sans-serif;
+}
+
+body form > div.articleBlock textarea:focus {
+  outline: none;
+  border-left: 2px solid grey;
+  border-bottom: 2px solid grey;
+}
+
+body form > div.tagBlock {
+  float: left;
+  width: 100%;
+}
+
+body form > div.tagBlock input {
+  color: black;
+  float: left;
+  width: 100%;
+  border: 0px;
+  border-bottom: 1px solid lightgrey;
+  border-top: 1px solid lightgrey;
+  padding: 10px 5%;
+  margin: 10px 0;
+  font-size: 12px;
+}
+
+body form > div.tagBlock input:focus {
+  outline: none;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+}
+
+body form > div.optionBlock {
+  float: left;
+  width: 50%;
+  margin: 0 25%;
+  /* background: blue; */
+}
+
+body form > div.optionBlock button {
+  float: left;
+  width: 100px;
+  height: 30px;
+  margin: 0 4%;
+  background: black;
+  color: white;
+  font-size: 14px;
+  box-shadow: 0px;
+  border: 0px;
+  border-radius: 5px;
+}
+
+body form > div.optionBlock label {
+  float: right;
+  width: 120px;
+  height: 30px;
+  background: grey;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  padding: 9px 0;
+  margin: 0 4%;
+  border-radius: 5px;
+}
+
+body form > div.optionBlock button:hover {
+  color: white;
+  opacity: .5;
+  box-shadow: 1px 1px 4px 2px grey;
+}
+
+body form > div.optionBlock button:active {
+  background: white;
+  color: black;
+}
+
+body form > div.optionBlock button:focus {
+  outline: none;
+}
+
+body form > div.optionBlock label:hover {
+  background: black;
+  color: white;
+  opacity: .5;
+  box-shadow: 1px 1px 4px 2px grey;
+}
+
+body form > div.optionBlock label:active {
+  background: white;
+  color: black;
+}
+
+body form > div.optionBlock label:focus {
+  outline: none;
+}

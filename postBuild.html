@@ -10,6 +10,7 @@
 
     <!-- external CSS link -->
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/postBuild.css">
   </head>
   <header>
     <nav>
@@ -30,36 +31,28 @@
   </header>
   <body>
     <form class="" action="index.html" method="post">
-      <div class="">
-        <label>Title
-          <input type="text" name="" value="" placeholder="Post Title..." >
+      <div class = "titleBlock">
+        <label>
+          <input type="text" class = "title" name="" value="" spellcheck="true" placeholder="Post Title..." >
         </label>
       </div>
-      <div class="">
-        <label for="">Write Post
-          <textarea name="name" rows = "18" cols = "40" placeholder="Start writing here...">
-          </textarea>
+      <div class="articleBlock">
+        <label for="">
+          <textarea name="name" class = "article" rows = "20" spellcheck="true" placeholder="Start writing here..."></textarea>
           <!-- Suggestion: Js Code to use tab like normal? -->
         </label>
       </div>
-      <div class="">
-        <label>Tags
-          <input type="text" name="" value="">
+      <div class="tagBlock">
+        <label>
+          <input type="text" name="" value="" placeholder="Tags...">
         </label>
       </div>
-      <div class="">
-        <label for="">Related Figures
-          <!-- Suggestion: Ways to search in post for number of figures -->
-          <span>Enter Figure Amount</span>
-          <input type="number" name="" value="0" min="0" max="25">
-          <input type="file" name="" value="">
-          <!-- Goal: Selected number of figures creates more file boxes -->
-        </label>
+      <div class="optionBlock">
+        <button>publish</button>
+        <input type="file" accept="image/*" id="imageUpload" hidden>
+        <label for="imageUpload" class="">Upload Image</label>
       </div>
-      <a href="displayPost.html">test</a>
-      <a href="displayPost.html">
-        <input type="submit" name="" value="Confirm Post" href="displayPost.html">
-      </a>
+      <!-- <a href="displayPost.html">test</a> -->
     </form>
   </body>
 </html>
