@@ -39,13 +39,17 @@ app.listen("3000", () => {
 // Post Images
 
 app.post('/upload', (req, res) => {
+    console.log("\n UPLOADING IN HERE PRICK");
     let file = req.files.image;
     let date = new Date();
     // image name
     let imagename = date.getDate() + date.getTime() + file.name;
     // image upload path
-    let path = '/Musings\ of\ a\ YOM/uploads/' + imagename;
-
+    let path = initial_path + 'uploads/' + imagename;
+    // let pwd = "/Users/Nash/Desktop/CODING PROJECTS/Personal Projects PRO/Musings of a YOM/uploads"
+    // let path = 'Musings\ of\ a\ YOM/uploads/' + imagename;
+    console.log("UPLOAD PATH: " + path);
+    // console.log((pwd === path));
     // create upload
     file.mv(path, (err, result) => {
         if(err){
@@ -57,5 +61,6 @@ app.post('/upload', (req, res) => {
     })
 })
 
+// /Users/Nash/Desktop/CODING PROJECTS/Personal Projects PRO/Musings of a YOM/uploads
 
 // Run your server by 'npm start'

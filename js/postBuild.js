@@ -1,5 +1,5 @@
 const blogTitleField = document.querySelector('.title');
-const articleFeild = document.querySelector('.article');
+const articleField = document.querySelector('.article');
 
 // // banner
 // const bannerImage = document.querySelector('#banner-upload');
@@ -12,7 +12,7 @@ const uploadInput = document.querySelector('#image-upload');
 
 // HERE I WAS BUILDING A TEST CASE TO SEE IF IT WOULD WORK IN THIS JS
 const el = document.getElementById("test");
-el.addEventListener("click", alert("I AM ALIVE"))
+el.addEventListener("click", () => alert("I AM ALIVE"))
 
 uploadInput.addEventListener('change', () => {
     uploadImage(uploadInput, "image");
@@ -45,7 +45,7 @@ const uploadImage = (uploadFile, uploadType) => {
 }
 
 const addImage = (imagepath, alt) => {
-    let curPos = articleFeild.selectionStart;
+    let curPos = articleField.selectionStart;
     let textToInsert = `\r![${alt}](${imagepath})\r`;
-    articleFeild.value = articleFeild.value.slice(0, curPos) + textToInsert + articleFeild.value.slice(curPos);
+    articleField.value = articleField.value.slice(0, curPos) + textToInsert + articleField.value.slice(curPos);
 }
