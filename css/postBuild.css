@@ -19,9 +19,9 @@ body {
 
 body section {
   float: left;
-  width: 80%;
+  width: 60%;
   /* background: red; */
-  margin: 15px 10%;
+  margin: 15px 20%;
   padding: 5px;
   font-family: sans-serif;
 }
@@ -39,7 +39,7 @@ body section > div.titleBlock input {
   border-bottom: 2px solid lightgrey;
   padding: 15px 5%;
   margin: 10px 0;
-  font-size: 18px;
+  font-size: 25px;
 }
 
 body section > div.titleBlock input:focus {
@@ -60,7 +60,8 @@ body section > div.articleBlock textarea {
   border: 0px;
   border-left: 2px solid lightgrey;
   border-bottom: 2px solid lightgrey;
-  font-size: 14px;
+  font-size: 18px;
+  line-height: 18pt;
   padding: 10px 5%;
   font-family: sans-serif;
 }
@@ -85,7 +86,7 @@ body section > div.tagBlock input {
   border-top: 1px solid lightgrey;
   padding: 10px 5%;
   margin: 10px 0;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 body section > div.tagBlock input:focus {

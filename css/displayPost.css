@@ -1,0 +1,220 @@
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+body {
+  font-family: sans-serif;
+  float: left;
+  height: 605px;
+  width: 100%;
+}
+
+
+
+body section.Post {
+  /* background: red; */
+  width: 60%;
+  margin: 0 20%;
+  float: left;
+}
+
+body section.Post section#header {
+  float: left;
+  width: 92%;
+  margin: 20px 4%;
+  /* background: teal; */
+}
+
+section#header > h2 {
+  float: left;
+  font-size: 2em;
+  width: 100%;
+}
+
+section#header > span#publish {
+  float: left;
+  color: grey;
+  font-size: 15px;
+  /* background: orange; */
+}
+
+body section.Post section#article {
+  float: left;
+  width: 92%;
+  margin: 10px 4%;
+  line-height: 18pt;
+  /* background: lightgreen; */
+}
+
+section#article h1 {
+  display: block;
+  font-size: 1.5em;
+  margin: 0.67em 0;
+  font-weight: bold;
+}
+
+section#article h2 {
+  display: block;
+  font-size: 1.3em;
+  margin: 0.83em 0;
+  font-weight: bold;
+}
+
+section#article h3 {
+  display: block;
+  font-size: 1.17em;
+  margin: 1em 0;
+  font-weight: bold;
+}
+
+section#article h4 {
+  display: block;
+  font-size: 1em;
+  margin: 1.33em 0;
+  font-weight: bold;
+}
+
+section#article h5 {
+  display: block;
+  font-size: .83em;
+  margin: 1.67em 0;
+  font-weight: bold;
+}
+
+section#article h6 {
+  display: block;
+  font-size: .67em;
+  margin: 2.33em 0;
+  font-weight: bold;
+}
+
+section#article p {
+  float: left;
+  width: 100%;
+  margin: 15px 0;
+}
+
+section#article img.article-image {
+  float: left;
+  margin: 20px 25%;
+  width: 50%;
+}
+
+body section.Post section#footer {
+  /* background: orange; */
+  float: left;
+  width: 92%;
+  margin: 10px 4%;
+}
+
+section#footer div.tags {
+  /* background: lightblue; */
+  float: left;
+  width: 100%;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+section#footer div.tags p {
+  float: left;
+}
+
+section#footer div.tags span {
+  float: left;
+  margin: 0 2%;
+}
+
+section#footer section.Related {
+  /* background: pink; */
+  float: left;
+  width: 100%;
+  margin: 15px 0;
+}
+
+section#footer section.Related h5 {
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
+
+section#footer section.Related ul {
+  /* background: lightgreen; */
+  float: left;
+  width: 100%;
+  margin: 2px 0;
+}
+
+section#footer section.Related li {
+  float: left;
+  display: inline;
+  width: 48%;
+  background: lightgrey;
+  opacity: .8;
+  padding: 0;
+  margin: 0 1%;
+  box-shadow: 1px 1px 10px 1px lightgrey;
+}
+
+section#footer section.Related li h1 {
+  opacity: 1;
+  float: left;
+  width: 100%;
+  color: black;
+  padding: 5px;
+  font-size: 22px;
+}
+
+section#footer section.Related li p {
+  opacity: 1;
+  float: left;
+  color: black;
+  width: 100%;
+  padding: 5px;
+  font-size: 14px;
+}
+
+section#footer section.Related li span {
+  color: grey;
+  float: right;
+  width: 40%;
+  font-size: 10px;
+  text-align: right;
+  padding: 0 5px 0 0;
+}
+
+section#footer section.Related li span + span {
+  color: white;
+  float: left;
+  width: 60%;
+  font-size: 12px;
+  text-align: left;
+  background: black;
+  padding: 0 0 0 5px;
+}
+
+section#footer section.Related li:hover {
+  opacity: 1;
+  box-shadow: 2px 2px 10px 3px lightgrey;
+}
+
+/* For References Section */
+
+/* body section.Post + section {
+  background: orange;
+  width: 100%;
+  float: left;
+} */
+
+
+footer {
+  /* background: yellow; */
+}

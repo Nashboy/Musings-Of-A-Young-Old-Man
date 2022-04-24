@@ -32,6 +32,10 @@ app.get('/editor', (req, res) => {
     res.sendFile(path.join(initial_path, "postBuild.html"));
 })
 
+app.get("/:blog", (req, res) => {
+    res.sendFile(path.join(initial_path, "displayPost.html"));
+})
+
 app.listen("3000", () => {
     console.log('listening......');
 })

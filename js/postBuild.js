@@ -10,14 +10,31 @@ const publishBtn = document.querySelector('.publish-btn');
 const uploadInput = document.querySelector('#image-upload');
 
 
-// HERE I WAS BUILDING A TEST CASE TO SEE IF IT WOULD WORK IN THIS JS
-const el = document.getElementById("test");
-el.addEventListener("click", () => alert("I AM ALIVE"))
+
 
 uploadInput.addEventListener('change', () => {
     uploadImage(uploadInput, "image");
     console.log("UPLOADING PHOTO.....")
 })
+
+// Creates Functional Tab Button in textarea
+document.querySelector('textarea').addEventListener('keydown', function(e) {
+  if (e.key == 'Tab') {
+    e.preventDefault();
+    var start = this.selectionStart;
+    var end = this.selectionEnd;
+
+    // set textarea value to: text before caret + tab + text after caret
+    this.value = this.value.substring(0, start) +
+      "\t" + this.value.substring(end);
+
+    // put caret at right position again
+    this.selectionStart =
+      this.selectionEnd = start + 1;
+  }
+});
+
+
 
 
 // Upload Image Function
@@ -77,7 +94,7 @@ const makePost = (article, title) => {
         let letters = 'abcdefghijklmnopqrstuvwxyz';
         let postTitle = title.split(" ").join("-");
         let id = '';
-        for(let i = 0; i < 4; i++){
+        for(let i = 0; i < 6; i++){
             id += letters[Math.floor(Math.random() * letters.length)];
         }
 
@@ -88,14 +105,16 @@ const makePost = (article, title) => {
 
         let newPost = new PostData(docName, date, title, article);
         console.log(newPost);
+        window.localStorage.setItem(docName, JSON.stringify(newPost));
         window.localStorage.setItem('posts', JSON.stringify(newPost));
-        let bruh = JSON.parse(window.localStorage.getItem('posts'))
+        let bruh = JSON.parse(window.localStorage.getItem(docName));
         console.log(`The title of this post is "${bruh.title}" with the content of "${bruh.article}" and it was published on ${bruh.publishedAt} under the name ${bruh.docName}`)
-        // .then(() => {
-        //     location.href = `/${docName}`;
-        // })
-        // .catch((err) => {
-        //     console.error(err);
-        // })
+        fetch('/:blog')
+          .then(() => {
+              location.href = `/${docName}`;
+          })
+          .catch((err) => {
+              console.error(err);
+          })
     }
   }

@@ -10,6 +10,7 @@
 
     <!-- external CSS link -->
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/displayPost.css">
   </head>
   <header>
     <nav>
@@ -30,53 +31,54 @@
   </header>
   <body>
     <section class="Post">
-      <section id = "Header">
-        <h2>Title</h2>
-        <span>date of Post</span>
-        <span>by Nigel H.</span>
+      <section id = "header">
+        <h2 id="title">Title</h2>
+        <span id="publish">published on: April 12 2022</span>
       </section>
-      <section id = "Content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <img src="" alt="sample img">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <section id = "article">
+
       </section>
-      <section id = "Footer">
+      <section id = "footer">
         <div class="tags">
+          <p>Tags: </p>
           <span>tag</span>
           <span>tag</span>
           <span>tag</span>
         </div>
-        <section class="Related Post">
+        <section class="Related">
           <h5>Related Post</h5>
-          <ul>
+          <ul id="relatedPost">
             <li>
-              <div class="Post Display">
-                <h4>Title</h4>
-                <img src="" alt="Post Image">
-                <p>Preview of articles writing</p>
-                <span>Tag</span>
-              </div>
+              <a id="link1" href="">
+  							<h1 id="refTitle1">Electricity</h1>
+  							<!-- <img src="" alt=""> -->
+  							<p id="sample">Sample of the Article that has a size that is thick. This would be the first two sentences of the post.</p>
+  							<span id="publishDate1">Date: 1/1/2022</span>
+  							<span>Tag</span>
+    					</a>
             </li>
             <li>
-              <div class="Post Display">
-                <h4>Title</h4>
-                <img src="" alt="Post Image">
-                <p>Preview of articles writing</p>
-                <span>Tag</span>
-              </div>
+              <a id="link2" href="">
+  							<h1 id="refTitle2">The Other Plane</h1>
+  							<!-- <img src="" alt=""> -->
+  							<p id="sample2">Sample of the Article that has a size that is thick. This would be the first two sentences of the post.</p>
+  							<span id="publishDate2">Date: 1/2/2022</span>
+  							<span>Existential Density</span>
+    					</a>
             </li>
           </ul>
         </section>
       </section>
     </section>
-    <section>
+    <!-- <section>
       <h5>References</h5>
       <ul>
         <li><a href="#">Link to Video</a></li>
         <li><a href="#">Link to Free Book</a></li>
         <li><a href="#">Link to Video</a></li>
       </ul>
-    </section>
+    </section> -->
+    <script type="text/javascript" src = "js/displayPost.js"></script>
   </body>
   <footer>
     <span>Contact Me <a href="#">Here</a></span>
