@@ -104,6 +104,14 @@ section#article p {
   margin: 15px 0;
 }
 
+section#article span.italic {
+  font-style: italic;
+}
+
+section#article span.bold {
+  font-weight: bold;
+}
+
 section#article img.article-image {
   float: left;
   margin: 20px 25%;

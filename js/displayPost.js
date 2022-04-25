@@ -22,7 +22,7 @@ function initializePost(docRef) {
 }
 
 function setupPost(data) {
-  console.log("DATA: " + data);
+  // console.log("DATA: " + data);
   let obj = JSON.parse(data);
 
 
@@ -35,12 +35,12 @@ function setupPost(data) {
 function addArticle(element, dataPack) {
   console.log("Building Article...");
   data = dataPack.split("\n").filter(item => item.length);
-  console.log(data);
-  console.log(element);
+  // console.log(data);
+  // console.log(element);
 
   data.forEach(item => {
       // check for heading
-      console.log(item);
+      // console.log(item);
       if(item[0] == '#'){
           console.log("Processing Header Text");
           let hCount = 0;
@@ -67,10 +67,57 @@ function addArticle(element, dataPack) {
           let src = item.slice(seperator + 2, item.length - 1);
           element.innerHTML += `<img src="${src}" alt="${alt}" class="article-image">`;
       }
-
-      else{
+      else {
+        // Building paragraph
           console.log("Processing Standard Text");
-          element.innerHTML += `<p>${item}</p>`;
+          // console.log("enter <p>");
+          let codeLine = `<p>`
+          let itemContent = ''
+          for (var i = 0; i < item.length; i++) {
+            itemContent = item[i];
+            // Search for *italic* or **bold**
+            if(itemContent === "*") {
+              // console.log(`Found * at ${i}`);
+              if(item[i+1] !== "*"){
+                // console.log("italisizing...");
+                // console.log("Searching for closing *");
+                for(var f = i+1; f <= item.length; f++){
+                  if(item[f] === "*") {
+                    // console.log(`Closing * at ${f}`);
+                    // console.log(`Italisizing ${item.slice(i+1,f)} btwn ${i+1} and ${f}`);
+                    codeLine += `<span class="italic">${item.slice(i+1,f)}</span>`
+                    itemContent = item[f];
+                    i = f;
+                    f = item.length+1000; //close loop
+                    // console.log(`Continuing from ${itemContent} on index ${i}`);
+                  }
+                }
+              }
+              else {
+                // console.log("bolding...");
+                // console.log("Searching for closing **");
+                for(var f = i+2; f <= item.length; f++){
+                  if(item[f] === "*" && item[f+1] === "*") {
+                    // console.log(`Closing ** at ${f} and ${f+1}`);
+                    // console.log(`Bolding ${item.slice(i+2,f)} btwn ${i+2} and ${f}`);
+                    codeLine += `<span class="bold">${item.slice(i+2,f)}</span>`
+                    itemContent = item[f+1];
+                    i = f+1;
+                    f = item.length+1000
+                    // console.log(`Continuing from ${itemContent} on index ${i}`);
+                  }
+                }
+              }
+            }
+            // Add Regular Paragraph
+            else {
+              codeLine += itemContent
+            }
+          }
+          // console.log("Closing </p>");
+          codeLine += `</p>`
+          // console.log(codeLine)
+          element.innerHTML += codeLine
       }
   })
 }
@@ -78,7 +125,7 @@ function addArticle(element, dataPack) {
 function addFooter(element) {
   console.log("Building Footer...");
   let footData = randData()
-  console.log("Selected Articles: " + footData)
+  // console.log("Selected Articles: " + footData)
   let data1 = JSON.parse(window.localStorage.getItem(footData[0]))
   let data2 = JSON.parse(window.localStorage.getItem(footData[1]))
 
@@ -100,20 +147,20 @@ function randData() {
   let storageLength = store.length;
   let arrayStore = []
   for(let i = 0; i <= storageLength - 1; i++) {
-    console.log(`Store Key ${i}: ${store.key(i)}`);
+    // console.log(`Store Key ${i}: ${store.key(i)}`);
     if ((store.key(i) === 'posts') || (store.key(i) === postId)){
-      console.log(`Matches Current Post`);
+      // console.log(`Matches Current Post`);
     } else {
-      console.log('Adding to arrayStore');
+      // console.log('Adding to arrayStore');
       arrayStore.push(store.key(i))
     }
   }
-  console.log(`Available Content: ${arrayStore} with length ${arrayStore.length}`)
+  // console.log(`Available Content: ${arrayStore} with length ${arrayStore.length}`)
 
   let article1 = arrayStore[Math.floor(Math.random() * arrayStore.length)]
   console.log(`${article1} selected`);
   arrayStore.splice(arrayStore.indexOf(article1), arrayStore.indexOf(article1) + 1)
-  console.log(arrayStore)
+  // console.log(arrayStore)
   let article2 = arrayStore[Math.floor(Math.random() * arrayStore.length)]
   console.log(`${article2} selected`)
   return [article1, article2]
@@ -126,14 +173,14 @@ function makeSample(data, limit) {
   data = data.toString().replace(/\t/g, '').split('\r\n');
   data = data.toString().replace(/\n/g, ' ');
   data = data.toString().replace(/#/g, '');
-  console.log(data);
+  // console.log(data);
   for(let i = 0; i <= limit; i++) {
     artiSet += data[i]
     if(data[i+1] === undefined || data[i+1] === null) {
       i = 1000;
     }
   }
-  console.log(artiSet);
+  // console.log(artiSet);
   return `${artiSet}...`
 }
 
