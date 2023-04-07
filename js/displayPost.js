@@ -74,7 +74,7 @@ function addArticle(element, dataPack) {
           let codeLine = `<p>`
           let itemContent = ''
           for (var i = 0; i < item.length; i++) {
-            itemContent = item[i];
+            itemContent = item[i]
             // Search for *italic* or **bold**
             if(itemContent === "*") {
               // console.log(`Found * at ${i}`);
@@ -109,7 +109,12 @@ function addArticle(element, dataPack) {
                 }
               }
             }
-            // Add Regular Paragraph
+            // Add Tab
+            else if(itemContent === `\t`) {
+              // console.log("found TAB");
+              codeLine += `<span class = "tab">`
+            }
+            // Add Regular Paragraph content
             else {
               codeLine += itemContent
             }

@@ -10,15 +10,17 @@ const publishBtn = document.querySelector('.publish-btn');
 const uploadInput = document.querySelector('#image-upload');
 
 
-
-
 uploadInput.addEventListener('change', () => {
     uploadImage(uploadInput, "image");
     console.log("UPLOADING PHOTO.....")
 })
 
+publishBtn.addEventListener('click', () => {
+  makePost(articleField.value, postTitleField.value);
+})
+
 // Creates Functional Tab Button in textarea
-document.querySelector('textarea').addEventListener('keydown', function(e) {
+document.querySelector('.article').addEventListener('keydown', function(e) {
   if (e.key == 'Tab') {
     e.preventDefault();
     var start = this.selectionStart;
@@ -79,11 +81,6 @@ function PostData(docName, date, title, article) {
 
 
 
-publishBtn.addEventListener('click', () => {
-  makePost(articleField.value, postTitleField.value);
-})
-
-
 const makePost = (article, title) => {
     if(!localStorage.getItem('posts')) {
       localStorage.setItem('posts', "Empty")
@@ -118,3 +115,51 @@ const makePost = (article, title) => {
           })
     }
   }
+
+
+  // const typeSpace = document.querySelector('.article');
+  //
+  // // typeSpace.style.fontStyle = "italic";
+  //
+  // typeSpace.addEventListener('input', () => {
+  //   console.log("Animation Start")
+  //   animateText(typeSpace);
+  // })
+
+
+  // function animateText(textSpace) {
+  //   console.log('Animating Text...')
+  //   let text = textSpace.value;
+  //   console.log(text)
+  //   let item;
+  //   for(var i = 0; i<text.length; i++) {
+  //     item = text[i]
+  //     console.log(item)
+  //     if (item === '*') {
+  //       //check for bold
+  //       if (text[i+1] === '*') {
+  //         for(var f = i+2; f <= text.length; f++){
+  //           if(text[f] === "*" && text[f+1] === "*") {
+  //             console.log("Bolding...")
+  //             text.substring(i+2,f).style.fontWeight = 'bold'
+  //             return
+  //           }
+  //         }
+  //       }
+  //       //italic
+  //       else {
+  //         for(var f = i+1; f <= text.length; f++){
+  //           if(text[f] === "*") {
+  //             console.log("Italic...");
+  //             console.log(`${text} Substring: ${text.substring(i+1,f)}`);
+  //             text.substring(i+1,f).style.fontStyle = 'italic'
+  //             // textSpace.innnerHTML += `<span class="italic">${text.substring(i+1,f)}</span>`
+  //             console.log(text);
+  //             return
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  //   return
+  // }
